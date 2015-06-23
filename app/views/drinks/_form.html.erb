@@ -1,0 +1,20 @@
+<%= form_for @drink do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :category_id %>
+  <%= f.select :category_id, @categories_dropdown %>
+
+  <% @alcohol_levels.each do |level| %>
+    <%= f.radio_button :alcohol_level, level %>
+    <%= f.label :alcohol_level, level, value: level %>
+  <% end %>
+
+  <%= f.check_box :featured %>
+  <%= f.label :featured, "Featured" %>
+
+  <%= f.submit "Add Drink" %>
+<% end %>

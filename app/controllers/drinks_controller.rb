@@ -1,6 +1,8 @@
 class DrinksController < ApplicationController
   def new
     @drink = Drink.new
+    @categories_dropdown = Category.all.map { |a| [a.name, a.id] }
+    @alcohol_levels = ["Low", "Medium", "High"]
   end
 
   def create
