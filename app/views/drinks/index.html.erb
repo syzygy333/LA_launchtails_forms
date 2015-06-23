@@ -12,7 +12,7 @@
 
         <%- @drinks.each do |drink| -%>
           <tr>
-            <td><%= drink.title %></td>
+            <td><%= link_to drink.title, '/drinks/' + drink.to_param %></td>
             <td><%= truncate(drink.description, length: 30) %></td>
             <td>
               <%= link_to 'Delete',
